@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://github.com/checkstyle/contribution/tree/master/xsl
+HostUrl=https://github.com/checkstyle/contribution/blob/master/xsl/checkstyle-simple.xsl
