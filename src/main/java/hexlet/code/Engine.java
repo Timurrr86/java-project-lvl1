@@ -22,6 +22,5 @@ public class Engine {
         if(numberOfCorrectAnswer >= 3) {
             System.out.println("Congratulations, " + name);
         }
-
     }
 }

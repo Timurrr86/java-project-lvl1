@@ -25,7 +25,7 @@ public class GCD {
                 System.out.println("Correct!");
                 numberOfCorrectAnswer += 1;
             } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was" + "'" + maxDivisor + "'" + ".\n" +
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was" + " '" + maxDivisor + "'" + ".\n" +
                         "Let's try again, " + name);
                 break;
             }
