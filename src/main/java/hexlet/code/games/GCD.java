@@ -32,7 +32,9 @@ public class GCD {
             System.out.println();
 
         }
-        Engine.gameResult(numberOfCorrectAnswer, name);
+        if(numberOfCorrectAnswer >= 3) {
+            System.out.println("Congratulations, " + name);
+        }
     }
 
 }

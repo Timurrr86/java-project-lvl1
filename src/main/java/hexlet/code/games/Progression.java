@@ -25,7 +25,9 @@ public class Progression {
             System.out.println();
 
         }
-        Engine.gameResult(numberOfCorrectAnswer, name);
+        if(numberOfCorrectAnswer >= 3) {
+            System.out.println("Congratulations, " + name);
+        }
     }
     public static int[] getProgression() {
         int[] numbers = new int[10];
