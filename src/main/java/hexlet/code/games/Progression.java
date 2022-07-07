@@ -3,31 +3,19 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Progression {
+    private static final String task = "What number is missing in the progression?\n";
+    private static final String[] questions = new String[3];
+    private static final String[] correctAnswer = new String[3];
     public static void play() {
-        String name = Engine.getPlayerName();
-        System.out.println("Hello, " + name + "!");
-        System.out.println("What number is missing in the progression?\n");
-        int numberOfCorrectAnswer = 0;
         for(int i = 0; i < 3; i++) {
             int[] numbers = getProgression();
             int maskedNumber = 1 + (int) (Math.random() * 10);
             String maskedProgression = getMaskedProgression(numbers, maskedNumber);
-            System.out.println("Question: " + maskedProgression);
-            int answer = Engine.getAnswerInt();
-            if(answer == numbers[maskedNumber]) {
-                System.out.println("Correct!");
-                numberOfCorrectAnswer += 1;
-            } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was" + " '" + numbers[maskedNumber] + "'" + ".\n" +
-                        "Let's try again, " + name);
-                break;
-            }
-            System.out.println();
+            questions[i] = maskedProgression;
+            correctAnswer[i] = String.valueOf(numbers[maskedNumber]);
+        }
+        Engine.gameBody(task, questions, correctAnswer);
 
-        }
-        if(numberOfCorrectAnswer >= 3) {
-            System.out.println("Congratulations, " + name);
-        }
     }
     public static int[] getProgression() {
         int[] numbers = new int[10];
