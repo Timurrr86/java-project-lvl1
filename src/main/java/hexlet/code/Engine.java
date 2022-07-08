@@ -42,7 +42,7 @@ public class Engine {
             }
         }
         if (numberOfCorrectAnswer >= Engine.NUMBEROFROUNDS) {
-            System.out.println("Congratulations, " + name);
+            System.out.println("Congratulations, " + name + "!");
         }
     }
 }
