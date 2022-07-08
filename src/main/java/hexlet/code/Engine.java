@@ -37,7 +37,7 @@ public class Engine {
                 System.out.println("Correct!");
                 numberOfCorrectAnswer += 1;
             } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was" + "'" + correctAnswer[i] + "'" + ".\n" +
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was " + "'" + correctAnswer[i] + "'" + ".\n" +
                         "Let's try again, " + name);
                 break;
                 }

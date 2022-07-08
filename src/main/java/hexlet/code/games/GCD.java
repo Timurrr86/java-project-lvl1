@@ -3,38 +3,25 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class GCD {
+    private static final String task = "Find the greatest common divisor of given numbers.\n";
+    private static final String[] questions = new String[3];
+    private static final String[] correctAnswer = new String[3];
     public static void play() {
-        String name = Engine.getPlayerName();
-        System.out.println("Hello, " + name + "!");
-        System.out.println("Find the greatest common divisor of given numbers.\n");
-        int numberOfCorrectAnswer = 0;
+
         for(int i = 0; i < 3; i++) {
             //выводим число в диапазоне от 1 до 100
-            int x = 1 + (int) (Math.random() * 100);
-            int y = 1 + (int) (Math.random() * 100);
-            System.out.println("Question: " + x + " " + y);
-            int answer = Engine.getAnswerInt();
-            int maxDivisor = Math.min(x, y);
+            int randomNumber1 = Engine.getRandomNumber();
+            int randomNumber2 = Engine.getRandomNumber();
+            int maxDivisor = Math.min(randomNumber1, randomNumber2);
+            questions[i] = String.format("%s %s", randomNumber1, randomNumber2);
             for(int n = maxDivisor; n >= 1; n--) {
-                if(x % n == 0 && y % n == 0) {
-                    maxDivisor = n;
+                if(randomNumber1 % n == 0 && randomNumber2 % n == 0) {
+                    correctAnswer[i] = String.valueOf(n);
                     break;
                 }
             }
-            if(answer == maxDivisor) {
-                System.out.println("Correct!");
-                numberOfCorrectAnswer += 1;
-            } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was" + " '" + maxDivisor + "'" + ".\n" +
-                        "Let's try again, " + name);
-                break;
-            }
-            System.out.println();
-
         }
-        if(numberOfCorrectAnswer >= 3) {
-            System.out.println("Congratulations, " + name);
-        }
+        Engine.gameBody(task, questions, correctAnswer);
     }
 
 }
