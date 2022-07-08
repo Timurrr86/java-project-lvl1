@@ -3,20 +3,20 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Even {
-    private static final String task = "Answer 'yes' if number even otherwise answer 'no'.";
-    private static final String[] questions = new String[3];
-    private static final String[] correctAnswer = new String[3];
+    private static final String TASK = "Answer 'yes' if number even otherwise answer 'no'.";
+    private static final String[] QUESTIONS = new String[Engine.NUMBEROFROUNDS];
+    private static final String[] CORRECTANSWER = new String[Engine.NUMBEROFROUNDS];
 
     public static void play() {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.NUMBEROFROUNDS; i++) {
             int number = Engine.getRandomNumber();
-            questions[i] = String.valueOf(number);
-        if (number % 2 == 0) {
-            correctAnswer[i] = "yes";
-        } else {
-            correctAnswer[i] = "no";
+            QUESTIONS[i] = String.valueOf(number);
+            if (number % 2 == 0) {
+                CORRECTANSWER[i] = "yes";
+            } else {
+                CORRECTANSWER[i] = "no";
+            }
         }
-        }
-        Engine.gameBody(task, questions, correctAnswer);
+        Engine.gameBody(TASK, QUESTIONS, CORRECTANSWER);
     }
-    }
+}

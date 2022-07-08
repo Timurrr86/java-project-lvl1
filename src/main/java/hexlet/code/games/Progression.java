@@ -3,26 +3,27 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Progression {
-    private static final String task = "What number is missing in the progression?";
-    private static final String[] questions = new String[3];
-    private static final String[] correctAnswer = new String[3];
+    private static final String TASK = "What number is missing in the progression?";
+    private static final String[] QUESTIONS = new String[Engine.NUMBEROFROUNDS];
+    private static final String[] CORRECTANSWER = new String[Engine.NUMBEROFROUNDS];
+    private static final int STEPOFPROGRESSION = 10;
     public static void play() {
-        for(int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.NUMBEROFROUNDS; i++) {
             int[] numbers = getProgression();
-            int maskedNumber = 1 + (int) (Math.random() * 10);
+            int maskedNumber = 1 + (int) (Math.random() * STEPOFPROGRESSION);
             String maskedProgression = getMaskedProgression(numbers, maskedNumber);
-            questions[i] = maskedProgression;
-            correctAnswer[i] = String.valueOf(numbers[maskedNumber]);
+            QUESTIONS[i] = maskedProgression;
+            CORRECTANSWER[i] = String.valueOf(numbers[maskedNumber]);
         }
-        Engine.gameBody(task, questions, correctAnswer);
+        Engine.gameBody(TASK, QUESTIONS, CORRECTANSWER);
 
     }
     public static int[] getProgression() {
-        int[] numbers = new int[10];
-        int firstProgressionElement = 1 + (int) (Math.random() * 100);
-        int stepOfProgression = 1 + (int) (Math.random() * 10);
+        int[] numbers = new int[STEPOFPROGRESSION];
+        int firstProgressionElement = Engine.MINRANDOMNUMBER + (int) (Math.random() * Engine.MAXRANDOMNUMBER);
+        int stepOfProgression = Engine.MINRANDOMNUMBER + (int) (Math.random() * STEPOFPROGRESSION);
         numbers[0] = firstProgressionElement;
-        for(int i = 1; i < numbers.length; i++) {
+        for (int i = 1; i < numbers.length; i++) {
             numbers[i] = numbers[i - 1] + stepOfProgression;
         }
         return numbers;
