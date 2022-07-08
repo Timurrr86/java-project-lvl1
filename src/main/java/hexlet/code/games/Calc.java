@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Calc {
-    private static final String task = "What is the result of the expression?\n";
+    private static final String task = "What is the result of the expression?";
     private static final String[] questions = new String[3];
     private static final String[] correctAnswer = new String[3];
 

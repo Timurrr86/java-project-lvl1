@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Progression {
-    private static final String task = "What number is missing in the progression?\n";
+    private static final String task = "What number is missing in the progression?";
     private static final String[] questions = new String[3];
     private static final String[] correctAnswer = new String[3];
     public static void play() {

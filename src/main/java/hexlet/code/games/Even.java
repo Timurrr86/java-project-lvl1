@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Even {
-    private static final String task = "Answer 'yes' if number even otherwise answer 'no'.\n";
+    private static final String task = "Answer 'yes' if number even otherwise answer 'no'.";
     private static final String[] questions = new String[3];
     private static final String[] correctAnswer = new String[3];
 
