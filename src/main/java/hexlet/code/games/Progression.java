@@ -10,7 +10,7 @@ public class Progression {
     public static void play() {
         for (int i = 0; i < Engine.NUMBEROFROUNDS; i++) {
             int[] numbers = getProgression();
-            int maskedNumber = 1 + (int) (Math.random() * STEPOFPROGRESSION);
+            int maskedNumber = (int) (Math.random() * STEPOFPROGRESSION);
             String maskedProgression = getMaskedProgression(numbers, maskedNumber);
             QUESTIONS[i] = maskedProgression;
             CORRECTANSWER[i] = String.valueOf(numbers[maskedNumber]);
