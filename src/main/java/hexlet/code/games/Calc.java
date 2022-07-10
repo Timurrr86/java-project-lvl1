@@ -16,9 +16,17 @@ public class Calc {
             QUESTIONS[i] = String.format("%s %s %s", randomNumber1, operators[count], randomNumber2);
             int resultOfOperation = 0;
             switch (operators[count]) {
-                case "+" -> resultOfOperation = randomNumber1 + randomNumber2;
-                case "-" -> resultOfOperation = randomNumber1 - randomNumber2;
-                case "*" -> resultOfOperation = randomNumber1 * randomNumber2;
+                case "+":
+                    resultOfOperation = randomNumber1 + randomNumber2;
+                    break;
+                case "-":
+                    resultOfOperation = randomNumber1 - randomNumber2;
+                    break;
+                case "*":
+                    resultOfOperation = randomNumber1 * randomNumber2;
+                    break;
+                default:
+                    break;
             }
             CORRECTANSWER[i] = String.valueOf(resultOfOperation);
         }
