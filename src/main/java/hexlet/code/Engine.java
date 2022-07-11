@@ -4,13 +4,8 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int NUMBEROFROUNDS = 3;
-    public static final int MAXRANDOMNUMBER = 100;
-    public static final int MINRANDOMNUMBER = 1;
-
-    public static int getRandomNumber() {
-        //формируем число от 1 до 100
-        return MINRANDOMNUMBER + (int) (Math.random() * MAXRANDOMNUMBER);
-    }
+    public static final int MAX_RANDOM_NUMBER = 100;
+    public static final int MIN_RANDOM_NUMBER = 1;
 
     public static String getAnswer() {
         System.out.print("Your answer: ");
