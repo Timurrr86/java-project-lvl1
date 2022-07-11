@@ -6,8 +6,8 @@ public class GCD {
     private static final String TASK = "Find the greatest common divisor of given numbers.";
     private static final String[] QUESTIONS = new String[Engine.NUMBEROFROUNDS];
     private static final String[] CORRECTANSWER = new String[Engine.NUMBEROFROUNDS];
-    public static void play() {
 
+    public static void play() {
         for (int i = 0; i < Engine.NUMBEROFROUNDS; i++) {
             //выводим число в диапазоне от 1 до 100
             int randomNumber1 = Engine.getRandomNumber();

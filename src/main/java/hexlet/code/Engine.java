@@ -6,21 +6,25 @@ public class Engine {
     public static final int NUMBEROFROUNDS = 3;
     public static final int MAXRANDOMNUMBER = 100;
     public static final int MINRANDOMNUMBER = 1;
+
     public static String getPlayerName() {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Scanner scName = new Scanner(System.in);
         return scName.next();
     }
+
     public static int getRandomNumber() {
         //формируем число от 1 до 100
         return MINRANDOMNUMBER + (int) (Math.random() * MAXRANDOMNUMBER);
     }
+
     public static String getAnswer() {
         System.out.print("Your answer: ");
         Scanner sc = new Scanner(System.in);
         return sc.next();
     }
+
     public static void runGame(String task, String[] questions, String[] correctAnswer) {
         String name = Engine.getPlayerName();
         System.out.println("Hello, " + name + "!");

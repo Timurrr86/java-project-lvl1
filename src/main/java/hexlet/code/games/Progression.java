@@ -18,6 +18,7 @@ public class Progression {
         Engine.runGame(TASK, QUESTIONS, CORRECTANSWER);
 
     }
+
     public static int[] getProgression() {
         int[] numbers = new int[STEPOFPROGRESSION];
         int firstProgressionElement = Engine.MINRANDOMNUMBER + (int) (Math.random() * Engine.MAXRANDOMNUMBER);
@@ -28,6 +29,7 @@ public class Progression {
         }
         return numbers;
     }
+
     public static String getMaskedProgression(int[] numbers, int maskedNumber) {
         var sb = new StringBuilder();
         for (int i = 0; i < numbers.length; i++) {
