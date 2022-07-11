@@ -9,13 +9,13 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class App {
-    private static final int EXIT_0 = 0;
-    private static final int GREET_1 = 1;
-    private static final int EVEN_2 = 2;
-    private static final int CALC_3 = 3;
-    private static final int GCD_4 = 4;
-    private static final int PROGRESSION_5 = 5;
-    private static final int PRIME_6 = 6;
+    private static final int EXIT = 0;
+    private static final int GREET = 1;
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD_GAME = 4;
+    private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
 
     public static void main(String[] args) {
         Scanner num = new Scanner(System.in);
@@ -31,29 +31,29 @@ public class App {
         if (num.hasNextInt()) {
             int inputNumber = num.nextInt();
             switch (inputNumber) {
-                case EXIT_0:
+                case EXIT:
                     System.out.println("See you next time");
                     break;
-                case GREET_1:
+                case GREET:
                     Cli.getName();
                     break;
-                case EVEN_2:
+                case EVEN:
                     Even.play();
                     break;
-                case CALC_3:
+                case CALC:
                     Calc.play();
                     break;
-                case GCD_4:
+                case GCD_GAME:
                     GCD.play();
                     break;
-                case PROGRESSION_5:
+                case PROGRESSION:
                     Progression.play();
                     break;
-                case PRIME_6:
+                case PRIME:
                     Prime.play();
                     break;
                 default:
-                    System.out.println("Please choose existence game");
+                    System.out.println("Please choose existing game");
                     break;
             }
         }
