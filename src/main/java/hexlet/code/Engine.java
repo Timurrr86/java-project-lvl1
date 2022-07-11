@@ -7,13 +7,6 @@ public class Engine {
     public static final int MAXRANDOMNUMBER = 100;
     public static final int MINRANDOMNUMBER = 1;
 
-    public static String getPlayerName() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        Scanner scName = new Scanner(System.in);
-        return scName.next();
-    }
-
     public static int getRandomNumber() {
         //формируем число от 1 до 100
         return MINRANDOMNUMBER + (int) (Math.random() * MAXRANDOMNUMBER);
@@ -26,7 +19,10 @@ public class Engine {
     }
 
     public static void runGame(String task, String[] questions, String[] correctAnswer) {
-        String name = Engine.getPlayerName();
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        Scanner scName = new Scanner(System.in);
+        String name = scName.next();
         System.out.println("Hello, " + name + "!");
         System.out.println(task);
         int numberOfCorrectAnswer = 0;
@@ -48,5 +44,6 @@ public class Engine {
         if (numberOfCorrectAnswer >= Engine.NUMBEROFROUNDS) {
             System.out.println("Congratulations, " + name + "!");
         }
+        scName.close();
     }
 }
