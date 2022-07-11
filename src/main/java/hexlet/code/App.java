@@ -35,7 +35,7 @@ public class App {
                     System.out.println("See you next time");
                     break;
                 case GREET:
-                    Cli.getName();
+                    Cli.greet();
                     break;
                 case EVEN:
                     Even.play();
