@@ -15,18 +15,16 @@ public class GCD {
             //выводим число в диапазоне от 1 до 100
             int randomNumber1 = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
             int randomNumber2 = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-            //вычисляем вероятный максимально возможный делитель - минимальное из двух чисел
-            int maxDivisor = Math.min(randomNumber1, randomNumber2);
             QUESTIONS[i] = String.format("%s %s", randomNumber1, randomNumber2);
-            //проходим в цикле от максимально возможного в обратную сторону
-            for (int n = maxDivisor; n >= 1; n--) {
-                if (randomNumber1 % n == 0 && randomNumber2 % n == 0) {
-                    CORRECTANSWER[i] = String.valueOf(n);
-                    break;
-                }
-            }
+            CORRECTANSWER[i] = String.valueOf(calculateGCDByEuclids(randomNumber1, randomNumber2));
         }
         Engine.runGame(TASK, QUESTIONS, CORRECTANSWER);
     }
 
+    public static int calculateGCDByEuclids(int randomNumber1, int randomNumber2) {
+        if (randomNumber2 == 0) {
+            return randomNumber1;
+        }
+        return calculateGCDByEuclids(randomNumber2, randomNumber1 % randomNumber2);
+    }
 }
