@@ -30,6 +30,6 @@ public class Calc {
             }
             CORRECTANSWER[i] = String.valueOf(resultOfOperation);
         }
-        Engine.gameBody(TASK, QUESTIONS, CORRECTANSWER);
+        Engine.runGame(TASK, QUESTIONS, CORRECTANSWER);
     }
 }

@@ -23,7 +23,7 @@ public class GCD {
                 }
             }
         }
-        Engine.gameBody(TASK, QUESTIONS, CORRECTANSWER);
+        Engine.runGame(TASK, QUESTIONS, CORRECTANSWER);
     }
 
 }

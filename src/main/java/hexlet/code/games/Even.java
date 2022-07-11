@@ -17,6 +17,6 @@ public class Even {
                 CORRECTANSWER[i] = "no";
             }
         }
-        Engine.gameBody(TASK, QUESTIONS, CORRECTANSWER);
+        Engine.runGame(TASK, QUESTIONS, CORRECTANSWER);
     }
 }

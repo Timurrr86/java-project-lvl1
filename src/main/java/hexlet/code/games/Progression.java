@@ -15,7 +15,7 @@ public class Progression {
             QUESTIONS[i] = maskedProgression;
             CORRECTANSWER[i] = String.valueOf(numbers[maskedNumber]);
         }
-        Engine.gameBody(TASK, QUESTIONS, CORRECTANSWER);
+        Engine.runGame(TASK, QUESTIONS, CORRECTANSWER);
 
     }
     public static int[] getProgression() {

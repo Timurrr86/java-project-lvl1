@@ -24,6 +24,6 @@ public class Prime {
                 }
             }
         }
-        Engine.gameBody(TASK, QUESTIONS, CORRECTANSWER);
+        Engine.runGame(TASK, QUESTIONS, CORRECTANSWER);
     }
 }

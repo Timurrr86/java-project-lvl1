@@ -21,7 +21,7 @@ public class Engine {
         Scanner sc = new Scanner(System.in);
         return sc.next();
     }
-    public static void gameBody(String task, String[] questions, String[] correctAnswer) {
+    public static void runGame(String task, String[] questions, String[] correctAnswer) {
         String name = Engine.getPlayerName();
         System.out.println("Hello, " + name + "!");
         System.out.println(task);
