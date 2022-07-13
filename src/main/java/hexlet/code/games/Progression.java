@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Progression {
     private static final String TASK = "What number is missing in the progression?";
@@ -12,9 +13,9 @@ public class Progression {
 
     public static void launchGame() {
         for (int i = 0; i < Engine.NUMBEROFROUNDS; i++) {
-            int[] numbers = getProgression();
+            int[] numbers = generateProgression();
             int maskedNumber = (int) (Math.random() * STEPOFPROGRESSION);
-            String maskedProgression = getMaskedProgression(numbers, maskedNumber);
+            String maskedProgression = generateMaskedProgression(numbers, maskedNumber);
             QUESTIONS[i] = maskedProgression;
             CORRECTANSWER[i] = String.valueOf(numbers[maskedNumber]);
         }
@@ -22,10 +23,10 @@ public class Progression {
 
     }
 
-    public static int[] getProgression() {
+    public static int[] generateProgression() {
         int[] numbers = new int[STEPOFPROGRESSION];
-        int firstProgressionElement = MIN_RANDOM_NUMBER + (int) (Math.random() * MAX_RANDOM_NUMBER);
-        int stepOfProgression = MIN_RANDOM_NUMBER + (int) (Math.random() * STEPOFPROGRESSION);
+        int firstProgressionElement = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+        int stepOfProgression = Utils.getRandomNumber(MIN_RANDOM_NUMBER, STEPOFPROGRESSION);
         numbers[0] = firstProgressionElement;
         for (int i = 1; i < numbers.length; i++) {
             numbers[i] = numbers[i - 1] + stepOfProgression;
@@ -33,7 +34,7 @@ public class Progression {
         return numbers;
     }
 
-    public static String getMaskedProgression(int[] numbers, int maskedNumber) {
+    public static String generateMaskedProgression(int[] numbers, int maskedNumber) {
         var sb = new StringBuilder();
         for (int i = 0; i < numbers.length; i++) {
             if (i == maskedNumber) {
