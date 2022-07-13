@@ -38,19 +38,19 @@ public class App {
                     Cli.greet();
                     break;
                 case EVEN:
-                    Even.play();
+                    Even.launchGame();
                     break;
                 case CALC:
-                    Calc.play();
+                    Calc.launchGame();
                     break;
                 case GCD_GAME:
-                    GCD.play();
+                    GCD.launchGame();
                     break;
                 case PROGRESSION:
-                    Progression.play();
+                    Progression.launchGame();
                     break;
                 case PRIME:
-                    Prime.play();
+                    Prime.launchGame();
                     break;
                 default:
                     System.out.println("Please choose existing game");

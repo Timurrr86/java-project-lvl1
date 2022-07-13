@@ -11,7 +11,7 @@ public class Calc {
     private static final int MAX_RANDOM_NUMBER = 100;
     private static final String[] OPERATORS = {"+", "-", "*"};
 
-    public static void play() {
+    public static void launchGame() {
         for (int i = 0; i < Engine.NUMBEROFROUNDS; i++) {
             int randomNumber1 = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
             int randomNumber2 = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);

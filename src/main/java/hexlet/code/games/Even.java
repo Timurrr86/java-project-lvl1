@@ -10,7 +10,7 @@ public class Even {
     private static final int MIN_RANDOM_NUMBER = 1;
     private static final int MAX_RANDOM_NUMBER = 100;
 
-    public static void play() {
+    public static void launchGame() {
         for (int i = 0; i < Engine.NUMBEROFROUNDS; i++) {
             int number = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
             QUESTIONS[i] = String.valueOf(number);

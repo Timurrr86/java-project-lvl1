@@ -10,7 +10,7 @@ public class GCD {
     private static final int MIN_RANDOM_NUMBER = 1;
     private static final int MAX_RANDOM_NUMBER = 100;
 
-    public static void play() {
+    public static void launchGame() {
         for (int i = 0; i < Engine.NUMBEROFROUNDS; i++) {
             //выводим число в диапазоне от 1 до 100
             int randomNumber1 = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
