@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int NUMBEROFROUNDS = 3;
-    public static final int MAX_RANDOM_NUMBER = 100;
-    public static final int MIN_RANDOM_NUMBER = 1;
 
     public static String getAnswer() {
         System.out.print("Your answer: ");
@@ -20,25 +18,20 @@ public class Engine {
         String name = scName.next();
         System.out.println("Hello, " + name + "!");
         System.out.println(task);
-        int numberOfCorrectAnswer = 0;
         for (int i = 0; i < Engine.NUMBEROFROUNDS; i++) {
             //выводим число в диапазоне от 1 до 100
             System.out.print("Question: ");
             System.out.println(questions[i]);
             String answer = Engine.getAnswer();
-            if (answer.equals(correctAnswer[i])) {
-                System.out.println("Correct!");
-                numberOfCorrectAnswer += 1;
-            } else {
+            if (!answer.equals(correctAnswer[i])) {
                 System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
                         + "'" + correctAnswer[i] + "'");
                 System.out.println("Let's try again, " + name + "!");
-                break;
+                return;
             }
+            System.out.println("Correct!");
         }
-        if (numberOfCorrectAnswer >= Engine.NUMBEROFROUNDS) {
-            System.out.println("Congratulations, " + name + "!");
-        }
+        System.out.println("Congratulations, " + name + "!");
         scName.close();
     }
 }
