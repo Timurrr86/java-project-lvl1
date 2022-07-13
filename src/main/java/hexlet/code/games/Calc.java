@@ -12,27 +12,29 @@ public class Calc {
     public static void launchGame() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_ROUNDS][Engine.ARRAY_LENGTH];
         for (int i = 0; i < Engine.NUMBER_ROUNDS; i++) {
-            int randomNumber1 = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-            int randomNumber2 = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+            int number1 = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+            int number2 = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
             int count = Utils.getRandomNumber(0, OPERATORS.length - 1);
-            questionsAndAnswers[i][Engine.QUESTION_COUNT] = String.format("%s %s %s", randomNumber1, OPERATORS[count], randomNumber2);
-            questionsAndAnswers[i][Engine.ANSWER_COUNT] = makeCalculation(randomNumber1, randomNumber2, OPERATORS[count]);
+            questionsAndAnswers[i][Engine.QUESTION_COUNT] = String.format("%s %s %s", number1,
+                    OPERATORS[count], number2);
+            questionsAndAnswers[i][Engine.ANSWER_COUNT] = makeCalculation(number1,
+                    number2, OPERATORS[count]);
 
         }
         Engine.runGame(TASK, questionsAndAnswers);
     }
 
-    public static String makeCalculation(int randomNumber1, int randomNumber2, String operator) {
+    public static String makeCalculation(int number1, int number2, String operator) {
         int resultOfOperation = 0;
         switch (operator) {
             case "+":
-                resultOfOperation = randomNumber1 + randomNumber2;
+                resultOfOperation = number1 + number2;
                 break;
             case "-":
-                resultOfOperation = randomNumber1 - randomNumber2;
+                resultOfOperation = number1 - number2;
                 break;
             case "*":
-                resultOfOperation = randomNumber1 * randomNumber2;
+                resultOfOperation = number1 * number2;
                 break;
             default:
                 break;
