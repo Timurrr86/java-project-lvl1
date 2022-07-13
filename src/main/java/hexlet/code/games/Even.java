@@ -14,12 +14,16 @@ public class Even {
         for (int i = 0; i < Engine.NUMBEROFROUNDS; i++) {
             int number = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
             QUESTIONS[i] = String.valueOf(number);
-            if (number % 2 == 0) {
-                CORRECTANSWER[i] = "yes";
-            } else {
-                CORRECTANSWER[i] = "no";
-            }
+            CORRECTANSWER[i] = isEven(number) ? "yes" : "no";
         }
         Engine.runGame(TASK, QUESTIONS, CORRECTANSWER);
+    }
+
+    public static boolean isEven(int number) {
+        if (number % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
