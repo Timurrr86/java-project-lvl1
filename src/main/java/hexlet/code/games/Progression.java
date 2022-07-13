@@ -5,21 +5,20 @@ import hexlet.code.Utils;
 
 public class Progression {
     private static final String TASK = "What number is missing in the progression?";
-    private static final String[] QUESTIONS = new String[Engine.NUMBEROFROUNDS];
-    private static final String[] CORRECTANSWER = new String[Engine.NUMBEROFROUNDS];
     private static final int STEPOFPROGRESSION = 10;
     private static final int MIN_RANDOM_NUMBER = 1;
     private static final int MAX_RANDOM_NUMBER = 100;
 
     public static void launchGame() {
-        for (int i = 0; i < Engine.NUMBEROFROUNDS; i++) {
+        String[][] questionsAndAnswers = new String[Engine.NUMBER_ROUNDS][Engine.ARRAY_LENGTH];
+        for (int i = 0; i < Engine.NUMBER_ROUNDS; i++) {
             int[] numbers = generateProgression();
             int maskedNumber = (int) (Math.random() * STEPOFPROGRESSION);
             String maskedProgression = generateMaskedProgression(numbers, maskedNumber);
-            QUESTIONS[i] = maskedProgression;
-            CORRECTANSWER[i] = String.valueOf(numbers[maskedNumber]);
+            questionsAndAnswers[i][Engine.QUESTION_COUNT] = maskedProgression;
+            questionsAndAnswers[i][Engine.ANSWER_COUNT] = String.valueOf(numbers[maskedNumber]);
         }
-        Engine.runGame(TASK, QUESTIONS, CORRECTANSWER);
+        Engine.runGame(TASK, questionsAndAnswers);
 
     }
 
