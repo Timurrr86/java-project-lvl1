@@ -9,7 +9,7 @@ public class Prime {
     private static final int MAX_RANDOM_NUMBER = 100;
 
     public static void launchGame() {
-        String[][] questionsAndAnswers = new String[Engine.NUMBER_ROUNDS][Engine.ARRAY_LENGTH];
+        String[][] questionsAndAnswers = new String[Engine.NUMBER_ROUNDS][2];
         for (int i = 0; i < Engine.NUMBER_ROUNDS; i++) {
             int randomNumber = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
             questionsAndAnswers[i][0] = String.valueOf(randomNumber);
