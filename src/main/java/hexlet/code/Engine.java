@@ -11,8 +11,8 @@ public class Engine {
     public static void runGame(String task, String[][] questionsAndAnswers) {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        Scanner scName = new Scanner(System.in);
-        String name = scName.next();
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.next();
         System.out.println("Hello, " + name + "!");
         System.out.println(task);
         for (int i = 0; i < Engine.NUMBER_ROUNDS; i++) {
@@ -31,6 +31,6 @@ public class Engine {
             System.out.println("Correct!");
         }
         System.out.println("Congratulations, " + name + "!");
-        scName.close();
+        scanner.close();
     }
 }
