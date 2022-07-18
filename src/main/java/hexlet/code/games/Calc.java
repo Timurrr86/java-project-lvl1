@@ -17,14 +17,14 @@ public class Calc {
             int count = Utils.getRandomNumber(0, OPERATORS.length - 1);
             questionsAndAnswers[i][0] = String.format("%s %s %s", number1,
                     OPERATORS[count], number2);
-            questionsAndAnswers[i][1] = makeCalculation(number1,
+            questionsAndAnswers[i][1] = calculate(number1,
                     number2, OPERATORS[count]);
 
         }
         Engine.roundsData(TASK, questionsAndAnswers);
     }
 
-    public static String makeCalculation(int number1, int number2, char operator) {
+    public static String calculate(int number1, int number2, char operator) {
         switch (operator) {
             case '+':
                 return String.valueOf( number1 + number2);
