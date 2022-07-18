@@ -27,11 +27,11 @@ public class Calc {
     public static String calculate(int number1, int number2, char operator) {
         switch (operator) {
             case '+':
-                return String.valueOf( number1 + number2);
+                return String.valueOf(number1 + number2);
             case '-':
                 return String.valueOf(number1 - number2);
             case '*':
-                return String.valueOf( number1 * number2);
+                return String.valueOf(number1 * number2);
             default:
                 return "Something went wrong!";
         }
