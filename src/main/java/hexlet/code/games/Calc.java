@@ -7,7 +7,7 @@ public class Calc {
     private static final String TASK = "What is the result of the expression?";
     private static final int MIN_RANDOM_NUMBER = 1;
     private static final int MAX_RANDOM_NUMBER = 100;
-    private static final String[] OPERATORS = {"+", "-", "*"};
+    private static final char[] OPERATORS = {'+', '-', '*'};
 
     public static void launchGame() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_ROUNDS][Engine.ARRAY_LENGTH];
@@ -15,25 +15,25 @@ public class Calc {
             int number1 = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
             int number2 = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
             int count = Utils.getRandomNumber(0, OPERATORS.length - 1);
-            questionsAndAnswers[i][Engine.QUESTION_COUNT] = String.format("%s %s %s", number1,
+            questionsAndAnswers[i][0] = String.format("%s %s %s", number1,
                     OPERATORS[count], number2);
-            questionsAndAnswers[i][Engine.ANSWER_COUNT] = makeCalculation(number1,
+            questionsAndAnswers[i][1] = makeCalculation(number1,
                     number2, OPERATORS[count]);
 
         }
         Engine.roundsData(TASK, questionsAndAnswers);
     }
 
-    public static String makeCalculation(int number1, int number2, String operator) {
+    public static String makeCalculation(int number1, int number2, char operator) {
         int resultOfOperation = 0;
         switch (operator) {
-            case "+":
+            case '+':
                 resultOfOperation = number1 + number2;
                 break;
-            case "-":
+            case '-':
                 resultOfOperation = number1 - number2;
                 break;
-            case "*":
+            case '*':
                 resultOfOperation = number1 * number2;
                 break;
             default:

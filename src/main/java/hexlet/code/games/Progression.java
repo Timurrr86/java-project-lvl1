@@ -15,8 +15,8 @@ public class Progression {
             int[] numbers = generateProgression();
             int maskedNumber = (int) (Math.random() * STEPOFPROGRESSION);
             String maskedProgression = generateMaskedProgression(numbers, maskedNumber);
-            questionsAndAnswers[i][Engine.QUESTION_COUNT] = maskedProgression;
-            questionsAndAnswers[i][Engine.ANSWER_COUNT] = String.valueOf(numbers[maskedNumber]);
+            questionsAndAnswers[i][0] = maskedProgression;
+            questionsAndAnswers[i][1] = String.valueOf(numbers[maskedNumber]);
         }
         Engine.roundsData(TASK, questionsAndAnswers);
 

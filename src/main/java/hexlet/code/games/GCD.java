@@ -11,11 +11,10 @@ public class GCD {
     public static void launchGame() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_ROUNDS][Engine.ARRAY_LENGTH];
         for (int i = 0; i < Engine.NUMBER_ROUNDS; i++) {
-            //выводим число в диапазоне от 1 до 100
             int number1 = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
             int number2 = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-            questionsAndAnswers[i][Engine.QUESTION_COUNT] = String.format("%s %s", number1, number2);
-            questionsAndAnswers[i][Engine.ANSWER_COUNT] = String.valueOf(calculateGCDByEuclids(number1, number2));
+            questionsAndAnswers[i][0] = String.format("%s %s", number1, number2);
+            questionsAndAnswers[i][1] = String.valueOf(calculateGCDByEuclids(number1, number2));
         }
         Engine.roundsData(TASK, questionsAndAnswers);
     }

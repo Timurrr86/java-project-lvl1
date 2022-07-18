@@ -12,8 +12,8 @@ public class Even {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_ROUNDS][Engine.ARRAY_LENGTH];
         for (int i = 0; i < Engine.NUMBER_ROUNDS; i++) {
             int number = Utils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
-            questionsAndAnswers[i][Engine.QUESTION_COUNT] = String.valueOf(number);
-            questionsAndAnswers[i][Engine.ANSWER_COUNT] = isEven(number) ? "yes" : "no";
+            questionsAndAnswers[i][0] = String.valueOf(number);
+            questionsAndAnswers[i][1] = isEven(number) ? "yes" : "no";
         }
         Engine.roundsData(TASK, questionsAndAnswers);
     }
