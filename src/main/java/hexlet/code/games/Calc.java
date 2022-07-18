@@ -25,20 +25,15 @@ public class Calc {
     }
 
     public static String makeCalculation(int number1, int number2, char operator) {
-        int resultOfOperation = 0;
         switch (operator) {
             case '+':
-                resultOfOperation = number1 + number2;
-                break;
+                return String.valueOf( number1 + number2);
             case '-':
-                resultOfOperation = number1 - number2;
-                break;
+                return String.valueOf(number1 - number2);
             case '*':
-                resultOfOperation = number1 * number2;
-                break;
+                return String.valueOf( number1 * number2);
             default:
-                break;
+                return "Something went wrong!";
         }
-        return String.valueOf(resultOfOperation);
     }
 }
