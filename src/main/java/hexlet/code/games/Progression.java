@@ -18,7 +18,7 @@ public class Progression {
             questionsAndAnswers[i][Engine.QUESTION_COUNT] = maskedProgression;
             questionsAndAnswers[i][Engine.ANSWER_COUNT] = String.valueOf(numbers[maskedNumber]);
         }
-        Engine.runGame(TASK, questionsAndAnswers);
+        Engine.roundsData(TASK, questionsAndAnswers);
 
     }
 

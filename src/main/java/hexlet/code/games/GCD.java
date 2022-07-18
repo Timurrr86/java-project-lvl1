@@ -17,7 +17,7 @@ public class GCD {
             questionsAndAnswers[i][Engine.QUESTION_COUNT] = String.format("%s %s", number1, number2);
             questionsAndAnswers[i][Engine.ANSWER_COUNT] = String.valueOf(calculateGCDByEuclids(number1, number2));
         }
-        Engine.runGame(TASK, questionsAndAnswers);
+        Engine.roundsData(TASK, questionsAndAnswers);
     }
 
     public static int calculateGCDByEuclids(int number1, int number2) {

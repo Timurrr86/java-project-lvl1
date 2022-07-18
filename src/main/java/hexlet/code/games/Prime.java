@@ -15,7 +15,7 @@ public class Prime {
             questionsAndAnswers[i][Engine.QUESTION_COUNT] = String.valueOf(randomNumber);
             questionsAndAnswers[i][Engine.ANSWER_COUNT] = isPrime(randomNumber) ? "yes" : "no";
         }
-        Engine.runGame(TASK, questionsAndAnswers);
+        Engine.roundsData(TASK, questionsAndAnswers);
     }
 
     public static boolean isPrime(int randomNumber) {

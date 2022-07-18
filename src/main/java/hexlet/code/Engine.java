@@ -8,7 +8,7 @@ public class Engine {
     public static final int ANSWER_COUNT = 1;
     public static final int ARRAY_LENGTH = 2;
 
-    public static void runGame(String task, String[][] questionsAndAnswers) {
+    public static void roundsData(String task, String[][] questionsAndAnswers) {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         Scanner scanner = new Scanner(System.in);

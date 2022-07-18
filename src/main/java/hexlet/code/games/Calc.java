@@ -21,7 +21,7 @@ public class Calc {
                     number2, OPERATORS[count]);
 
         }
-        Engine.runGame(TASK, questionsAndAnswers);
+        Engine.roundsData(TASK, questionsAndAnswers);
     }
 
     public static String makeCalculation(int number1, int number2, String operator) {

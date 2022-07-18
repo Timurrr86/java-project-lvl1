@@ -15,7 +15,7 @@ public class Even {
             questionsAndAnswers[i][Engine.QUESTION_COUNT] = String.valueOf(number);
             questionsAndAnswers[i][Engine.ANSWER_COUNT] = isEven(number) ? "yes" : "no";
         }
-        Engine.runGame(TASK, questionsAndAnswers);
+        Engine.roundsData(TASK, questionsAndAnswers);
     }
 
     public static boolean isEven(int number) {
