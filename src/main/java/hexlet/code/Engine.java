@@ -13,15 +13,16 @@ public class Engine {
         System.out.println("Hello, " + name + "!");
         System.out.println(task);
         for (int i = 0; i < Engine.NUMBER_ROUNDS; i++) {
-            //выводим число в диапазоне от 1 до 100
+            String question = questionsAndAnswers[i][0];
+            String answer = questionsAndAnswers[i][1];
             System.out.print("Question: ");
-            System.out.println(questionsAndAnswers[i][0]);
+            System.out.println(question);
             System.out.print("Your answer: ");
             Scanner sc = new Scanner(System.in);
-            String answer = sc.next();
-            if (!answer.equals(questionsAndAnswers[i][1])) {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + questionsAndAnswers[i][1] + "'");
+            String answerUser = sc.next();
+            if (!answerUser.equals(answer)) {
+                System.out.println("'" + answerUser + "'" + " is wrong answer ;(. Correct answer was "
+                        + "'" + answer + "'");
                 System.out.println("Let's try again, " + name + "!");
                 sc.close();
                 return;
